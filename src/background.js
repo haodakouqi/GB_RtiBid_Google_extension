@@ -107,11 +107,11 @@ function setIcon(tabId, pixelCount) {
  * @param {*}
  */
 function beforeTRRequest(request) {
-    console.log(`%c beforeTRRequest`, 'color:blue', request.tabId)
+    // console.log(`%c beforeTRRequest`, 'color:blue', request.tabId)
     const url = new URL(request.url);
     const urlParams = new URLSearchParams(url.search);
     const tabId = request.tabId;
-    const pixelId = urlParams.get("pid");
+    const pixelId = urlParams.get("id");
     const event = urlParams.get("en");
     // Drop duplicate requests causing by pixel helper mv2
     //   if (urlParams.get("dt")) {
@@ -125,7 +125,7 @@ function beforeTRRequest(request) {
       pixelHelperDetails[tabId][pixelId] = [];
     }
 
-    const deleteKeys = ["pid", "en", "cid" ,"sid", "eb"];
+    const deleteKeys = ["id", "en", "kid" ,"oid", "d"];
 
     const eventValueList = []
     for (const [key, value] of urlParams.entries()) {
@@ -156,7 +156,7 @@ function beforeTRRequest(request) {
 // 拦截请求
 chrome.webRequest.onBeforeRequest.addListener(
   beforeTRRequest,
-  {urls: ["*://*.shoperatech.com/s/collect*"]},
+  {urls: ["*://*.vantacdn.com/collect*"]},
   ['extraHeaders', 'requestBody']
 );
 
@@ -164,5 +164,5 @@ chrome.webRequest.onErrorOccurred.addListener(
   function() {
     console.log("Error occured in request interception");
   },
-  {urls: ["*://*.shoperatech.com/s/collect*"]}
+  {urls: ["*://*.vantacdn.com/collect*"]}
 );

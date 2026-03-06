@@ -1,9 +1,9 @@
 {
-  "name": "shopera_pixel",
+  "name": "rtibid_pixel",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "The Shopera Pixel Helper is a plug-in that monitors whether your Shopera Pixel is functioning properly.   Shopera Pixel Helper is a Chrome extension that can help you verify and troubleshoot pixel installation by checking for errors and providing implementation recommendations for your website. ",
+  "description": "The RtiBid Pixel Helper is a plug-in that monitors whether your RtiBid Pixel is functioning properly.   RtiBid Pixel Helper is a Chrome extension that can help you verify and troubleshoot pixel installation by checking for errors and providing implementation recommendations for your website. ",
   "scripts": {
     "dev": "vite",
     "serve": "vite build --watch",
@@ -11,10 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "vue": "^3.5.24"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.1",
-    "vite": "^6.0.5"
+    "@vitejs/plugin-vue": "^6.0.1",
+    "sass": "^1.97.3",
+    "vite": "^7.2.2"
   }
 }

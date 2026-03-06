@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="panel">
+    <div class="app_main">
       <!-- Pixel helper header -->
       <div class="panelHeader">
         <div class="panelHeaderLogo">
-          <img src="./images/logo_big.png" style="width: 124px;">
+          <img src="./images/loginLogo.svg" style="width: 70px;">
         </div>
         <div class="panelHeaderContent">
           <span style="font-size: 14px; font-weight: bold;">
-            <span>Shopera Pixel Helper</span>
+            <span>RtiBid Pixel Helper</span>
           </span><br>
           <!-- <a class="hoverLink" href="https://developers.facebook.com/docs/ads-for-websites/pixel-troubleshooting">
             <span>Learn More</span>
@@ -16,7 +16,7 @@
         </div>
         <!-- <div class="hoverPointer popoutButton" @click="bindPopoutWindow"><img src="./images/popout_button.jpg"></div> -->
       </div>
-      <div class="content">
+      <div class="pixel_info">
         <span id="overview" v-html="overviewContent"></span>
       </div>
       <!-- Pixel Details -->
@@ -28,7 +28,7 @@
             <div class="pixelLogo"><img src="/images/icon128.png" style="width: 24px;"></div>
               <div class="pixelMainContainer">
                   <div class="pixelPanelOverviewTitle">
-                    <span>Shopera Pixel</span>
+                    <span>RtiBid Pixel</span>
                   </div>
                   <p class="pixelIdDisplay">
                     <span style="cursor:pointer;">
@@ -138,11 +138,8 @@ const overviewContent = computed(() => {
   const len = Array.isArray(unref(strogeData)) && unref(strogeData).length ? unref(strogeData)[0].eventList.length  : 0;
   if (len == 0) {
     content = `
-      No pixel was found on ${unref(tabURL)}. Please ensure your pixel code has been implemented correctly. You can work with your developer to verify the Shopera Pixel implementation.
+      No pixel detected on ${unref(tabURL)}. Please ask your developer to verify that the RtiBid Pixel code has been installed correctly.
     `
-    // content = `
-    //   ${unref(tabURL)} 上未发现像素。请确保您的像素代码已正确实施，您可以与开发人员一起检查 Shopera Pixel 实施情况。
-    // `
   } else {
     content = `1 pixel found on ${unref(tabURL)}`;
     // content = `${unref(tabURL)} 上发现${len}个事件`;
